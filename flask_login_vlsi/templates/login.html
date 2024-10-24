@@ -1,0 +1,19 @@
+<body>
+    <h2></h2>
+    <from method = "POST"action="{{url_for('login')}}">
+        <label for ="username">Username:</label>
+        <input type="text" id="username" name="username">
+        <label for ="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <button type="submit">Login</button>
+    </from>
+    {% with massage get_flashed_message()%}
+    {%if message %}
+    <ul>
+        {%for message in message%}
+        <li>{{message}}</li>
+        {%endfor%}
+    </ul>
+     {%endif%}
+     {%endwith%}
+    </body>
